@@ -29,6 +29,24 @@
     },
     {
       "name": "j"
+    },
+    {
+      "name": "k"
+    },
+    {
+      "name": "l"
+    },
+    {
+      "name": "m"
+    },
+    {
+      "name": "o"
+    },
+    {
+      "name": "p"
+    },
+    {
+      "name": "q"
     }
   ],
   "links": [
@@ -76,6 +94,36 @@
       "source":"a",
       "target": "j",
       "relation":"关系9"
+    },
+    {
+      "source":"k",
+      "target": "j",
+      "relation":"关系10"
+    },
+    {
+      "source":"l",
+      "target": "j",
+      "relation":"关系11"
+    },
+    {
+      "source":"m",
+      "target": "j",
+      "relation":"关系12"
+    },
+    {
+      "source":"o",
+      "target": "m",
+      "relation":"关系13"
+    },
+    {
+      "source":"p",
+      "target": "m",
+      "relation":"关系14"
+    },
+    {
+      "source":"q",
+      "target": "m",
+      "relation":"关系15"
     }
   ]
 }
