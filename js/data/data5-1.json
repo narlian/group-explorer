@@ -1,0 +1,17 @@
+{
+"nodes":[
+{ "name": "云天河0"   , "image" : "tianhe.png" },
+{ "name": "云天青4" , "image" : "tianqing.png" },
+{ "name": "夙玉5" , "image" : "suyu.png" },
+{ "name": "玄霄6" , "image" : "xuanxiao.png" },
+{ "name": "夙瑶7" , "image" : "suyao.png" },
+{ "name": "太清8" , "image" : "taiqing.png" }
+],
+"edges":[
+{ "source": 0 , "target": 2 , "relation":"母子" },
+{ "source": 1 , "target": 2 , "relation":"夫妻" },
+{ "source": 2 , "target": 3 , "relation":"同门" },
+{ "source": 2 , "target": 4 , "relation":"同门" },
+{ "source": 2 , "target": 5 , "relation":"师徒" }
+]
+}

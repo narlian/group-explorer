@@ -5,7 +5,7 @@
     <!-- <script type="text/javascript" src="js/plugins/d3/d3.v3.min.js"></script>-->
     <script type="text/javascript" src="js/plugins/d3/d3.v4.js"></script>
     <script type="text/javascript" src="js/plugins/jquery/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="js/plugins/layer/layer.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/layer/2.3/layer.js"></script>
     <link rel="stylesheet" href="css/demo.css"/>
 </head>
 <div class="cm-toobar" style="position:absolute; left:200px; top:15px; z-index:9">
@@ -22,6 +22,7 @@
 </div>
 <body>
 <script type="text/javascript">
+
     d3.json("./js/data/data1.json", function(error,json) {
 
 
@@ -40,10 +41,12 @@
             var vis = d3.select("body").append("svg:svg")
                     .attr("width", window.innerWidth)
                     .attr("height", window.innerHeight)
-                    .attr('class','group-explorer')
-                    .call(zoom).on("dblclick.zoom", null)
-                    .append('g').attr('class','all')
-                    .append("svg:defs").selectAll("marker")
+                    // .attr('class','group-explorer')
+                    .call(zoom).on("dblclick.zoom", null);
+
+                    vis.append('g').attr('class','all');
+
+                    vis.append("svg:defs").selectAll("marker")
                     .data(["end"])
                     .enter().append("svg:marker")
                     .attr("id", "arrow")
@@ -59,15 +62,19 @@
                     .attr("d", "M0,-5L10,0L0,5")
                     .attr('fill', '#666');
 
-            var simulation = d3.forceSimulation()
-                    .nodes(json.nodes)
-                    .force("link", d3.forceLink(json.links).distance(100))
-                    .force("charge", d3.forceManyBody())
-                    .force("center", d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2))
-                    .force("charge",d3.forceManyBody())
-                    .force("collide",d3.forceCollide(60).strength(0.2).iterations(5))
+    var simulation = d3.forceSimulation()
+        .force("link", d3.forceLink().distance(100).id(function(d) { return d.name; }))
+        .force("charge", d3.forceManyBody())
+        .force("center", d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2))
+        // .force("charge",d3.forceManyBody())
+        .force("collide",d3.forceCollide(60).strength(0.2).iterations(5));
 
-            console.info(json.links)
+            // var simulation = d3.forceSimulation()
+            simulation
+                    .nodes(json.nodes);
+                    // simulation.force("link", d3.forceLink(json.links).distance(100))
+                    simulation.force("link").links(json.links);
+
 
             var link = vis.selectAll("line.link")
                     .data(json.links)
@@ -76,7 +83,7 @@
                     .attr('stroke-width',1)
                     .attr('id', function (d) {
                         console.info(d)
-                        //return d.source.index + '_' + d.target.index
+                        // return d.source.index + '_' + d.target.index
                     })
                     .attr('marker-end', function (d) {
                         console.info("ddddd",d)
@@ -301,7 +308,7 @@
             update();
             bindEvent();
         }
-        groupExplorer('body')
+        new groupExplorer('body');
     });
 
 

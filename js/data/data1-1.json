@@ -1,34 +1,34 @@
 {
   "nodes": [
     {
-      "name": "a"
+      "id": "a"
     },
     {
-      "name": "b"
+      "id": "b"
     },
     {
-      "name": "c"
+      "id": "c"
     },
     {
-      "name": "d"
+      "id": "d"
     },
     {
-      "name": "e"
+      "id": "e"
     },
     {
-      "name": "f"
+      "id": "f"
     },
     {
-      "name": "g"
+      "id": "g"
     },
     {
-      "name": "h"
+      "id": "h"
     },
     {
-      "name": "i"
+      "id": "i"
     },
     {
-      "name": "j"
+      "id": "j"
     }
   ],
   "links": [
@@ -38,8 +38,8 @@
       "relation":"关系1"
     },
     {
-      "source":"a",
-      "target": "c",
+      "source":"c",
+      "target": "g",
       "relation":"关系2"
     },
     {
@@ -48,34 +48,39 @@
       "relation":"关系3"
     },
     {
-      "source":"a",
-      "target": "e",
+      "source":"b",
+      "target": "d",
       "relation":"关系4"
     },
     {
-      "source":"a",
-      "target": "f",
+      "source":"c",
+      "target": "d",
       "relation":"关系5"
     },
     {
-      "source":"a",
-      "target": "g",
-      "relation":"关系6<a href='http://www.baidu.com' target='_blank'>xxx</a>"
+      "source":"e",
+      "target": "f",
+      "relation":"关系6"
     },
     {
-      "source":"a",
-      "target": "h",
+      "source":"h",
+      "target": "i",
       "relation":"关系7"
     },
     {
-      "source":"a",
-      "target": "i",
+      "source":"f",
+      "target": "j",
       "relation":"关系8"
     },
     {
       "source":"a",
       "target": "j",
       "relation":"关系9"
+    },
+    {
+      "source":"f",
+      "target": "i",
+      "relation":"关系10"
     }
   ]
 }

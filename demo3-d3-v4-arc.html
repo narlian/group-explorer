@@ -47,6 +47,7 @@
                         .attr("height", defaultConfig.height);
 
 
+                console.log('defaultConfig.data.nodes:',defaultConfig.data.nodes);
                 this.force = d3.forceSimulation()
                         .nodes(defaultConfig.data.nodes)
                         .force("link", d3.forceLink(defaultConfig.data.links).distance(defaultConfig.distance))

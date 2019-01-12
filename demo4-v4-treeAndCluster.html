@@ -29,7 +29,7 @@
     var tree = d3.cluster().size([height, width - 160]); //集群图
     //var tree = d3.tree().size([height, width - 160]); 树形图
 
-    d3.json("js/data/cluster.json", function (error, data) {
+    d3.json("js/data/hierarchy.json", function (error, data) {
         if (error) throw error;
         var root = d3.hierarchy(data);
         tree(root);
